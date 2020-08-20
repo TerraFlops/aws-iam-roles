@@ -11,6 +11,8 @@ module "example_iam_role" {
   source = "git::https://github.com/TerraFlops/aws-iam-role.git?ref=v2.0"
   name = "ExampleIamRole" 
   description = "This is an example of creating an IAM role"
+  # Add assume role policy for ECS tasks
+  assume_role_policy = data.aws_iam_policy_document.ecs_tasks.json
   # Create an inline IAM policy on this role
   inline_policies = [
     {
