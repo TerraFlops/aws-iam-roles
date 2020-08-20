@@ -1,10 +1,10 @@
 # Create iterable maps of the supplied policies variables
 locals {
   policies = tomap({
-    for policy in var.policies: policy["name"] => policy["policy.policy_document"]
+    for policy in var.policies: policy["name"] => policy["policy_document"]
   })
   inline_policies = tomap({
-    for policy in var.inline_policies: policy["name"] => policy["policy.policy_document"]
+    for policy in var.inline_policies: policy["name"] => policy["policy_document"]
   })
 }
 
